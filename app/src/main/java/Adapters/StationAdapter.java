@@ -23,10 +23,10 @@ public class StationAdapter extends ArrayAdapter<Station> {
     Activity context;
     private ArrayList<Station> datos;
 
-    public StationAdapter(Fragment context, ArrayList<Station> datos) {
-        super(context.getActivity(), R.layout.station_row , datos);
+    public StationAdapter(Activity context, ArrayList<Station> datos) {
+        super(context, R.layout.station_row , datos);
         this.datos = datos;
-        this.context = context.getActivity();
+        this.context = context;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {

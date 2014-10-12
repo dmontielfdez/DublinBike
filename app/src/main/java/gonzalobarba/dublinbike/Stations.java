@@ -52,11 +52,7 @@ public class Stations extends Fragment {
 
        // lstStations.setAdapter(new StationAdapter(this, dataset));
 
-        try{
-            //lstStations.setAdapter(new StationAdapter(this, dataset));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
 
     }
 
@@ -76,6 +72,12 @@ public class Stations extends Fragment {
                             JSONArray arrayStations = jsonObject.getJSONArray("stations");
                             dataset = new ArrayList<Station>();
                             dataset = Parser(arrayStations);
+
+                            try{
+                                lstStations.setAdapter(new StationAdapter(getActivity(), dataset));
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
